@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Manager Dashboard</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+<nav>
+    <div class="logo"><span style="color:var(--primary)">Ar</span> Finance Manager</div>
+    <div class="nav-item active">Tableau de bord</div>
+    <div class="nav-item">Budget</div>
+    <div class="nav-item">À venir</div>
+    <div class="nav-item">Objectifs</div>
+    <div class="nav-item">Historique</div>
+</nav>
+
+<main>
+    <div class="header">
+        <div>
+            <h1 style="margin:0">Bonjour</h1>
+            <p style="color:var(--text-muted)">Aperçu rapide de vos finances</p>
+        </div>
+       <div class="card date-selector">
+    <button class="btn-prev" onclick="changeMonth(-1)">&#9664;</button>
+    <span id="current-date" class="date-display">Avril 2026</span>
+    <button class="btn-next" onclick="changeMonth(1)">&#9654;</button>
+    </div>
+    </div>
+
+    <div class="dashboard-grid">
+        <div class="card">
+            <div class="stat-label">Solde actuel</div>
+            <div class="stat-value">450 000 Ar</div>
+            <div class="stat-sub text-success">+5.2% vs mois dernier</div>
+        </div>
+        <div class="card">
+            <div class="stat-label">Revenus</div>
+            <div class="stat-value text-success">1 500 000 Ar</div>
+            <div class="stat-sub">3 entrées ce mois</div>
+        </div>
+        <div class="card">
+            <div class="stat-label">Dépenses</div>
+            <div class="stat-value text-danger">1 050 000 Ar</div>
+            <div class="stat-sub">17 transactions</div>
+        </div>
+
+        <div class="card repartition-container">
+            <div class="donut-chart">
+                <div class="donut-hole">
+                    <span style="color:var(--text-muted)">Total</span>
+                    <span style="font-weight:bold">1 050 000 Ar</span>
+                </div>
+            </div>
+            <ul class="legend-list">
+                <li class="legend-item"><span><span class="dot bg-primary"></span>Logement</span> <b>470 000 Ar</b></li>
+                <li class="legend-item"><span><span class="dot bg-success"></span>Transport</span> <b>210 000 Ar</b></li>
+                <li class="legend-item"><span><span class="dot bg-warning"></span>Loisirs</span> <b>158 000 Ar</b></li>
+                <li class="legend-item"><span><span class="dot bg-purple"></span>Alimentation</span> <b>126 000 Ar</b></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3 class="section-title">À venir cette semaine</h3>
+            <div class="upcoming-item">
+                <span>Loyer</span> <b class="text-danger">-600 000 Ar</b>
+            </div>
+            <hr class="separator">
+            <h3 class="section-title" style="margin-top:20px">Mes objectifs</h3>
+            <div class="progress-container">
+                <div class="progress-info">
+                    <span>Vacances été</span> <span>62%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" style="width:62%"></div></div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<button class="btn-add">+</button>
+
+</body>
+</html>
