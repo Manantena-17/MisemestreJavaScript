@@ -10,8 +10,12 @@
 
 <nav>
     <div class="logo"><span style="color:var(--primary)">Ar</span> Finance Manager</div>
-    <div class="nav-item active">Tableau de bord</div>
-    <div class="nav-item">Budget</div>
+    <a href="index.html" style="text-decoration: none; color: inherit;">
+        <div class="nav-item active">Tableau de bord</div>
+    </a>
+    <a href="./Js/budget/budget.html" style="text-decoration: none; color: inherit;">
+        <div class="nav-item">Budget</div>
+    </a>
     <div class="nav-item">À venir</div>
     <div class="nav-item">Objectifs</div>
     <div class="nav-item">Historique</div>
@@ -29,38 +33,35 @@
             <button class="btn-next">&#9654;</button>
         </div>
     </div>
-
     <div class="dashboard-grid">
         <div class="card">
             <div class="stat-label">Solde actuel</div>
             <span id="balance-value" class="stat-value">0 Ar</span>
             <div class="stat-sub text-success">+5.2% vs mois dernier</div>
         </div>
-
         <div class="card">
             <div class="stat-label">Revenus</div>
             <div id="income-value" class="stat-value text-success">0 Ar</div>
             <div id="income-count" class="stat-sub">0 entrée ce mois</div>
         </div>
-
         <div class="card">
             <div class="stat-label">Dépenses</div>
             <div id="expense-value" class="stat-value text-danger">0 Ar</div>
             <div id="expense-count" class="stat-sub">0 transaction</div>
         </div>
-
+        
         <div class="card repartition-container">
-            <div class="donut-chart">
+            <div class="donut-chart" id="donut-gradient">
                 <div class="donut-hole">
-                    <span style="color:var(--text-muted)">Total</span>
+                    <span style="color:var(--text-muted)">Total Dépenses</span>
                     <span style="font-weight:bold" id="total-donut">0 Ar</span>
                 </div>
             </div>
             <ul class="legend-list">
-                <li class="legend-item"><span><span class="dot bg-primary"></span>Logement</span> <b>0 Ar</b></li>
-                <li class="legend-item"><span><span class="dot bg-success"></span>Transport</span> <b>0 Ar</b></li>
-                <li class="legend-item"><span><span class="dot bg-warning"></span>Loisirs</span> <b>0 Ar</b></li>
-                <li class="legend-item"><span><span class="dot bg-purple"></span>Alimentation</span> <b>0 Ar</b></li>
+                <li class="legend-item"><span><span class="dot bg-primary"></span>Logement</span> <b id="val-logement">0 Ar</b></li>
+                <li class="legend-item"><span><span class="dot bg-success"></span>Transport</span> <b id="val-transport">0 Ar</b></li>
+                <li class="legend-item"><span><span class="dot bg-warning"></span>Loisirs</span> <b id="val-loisirs">0 Ar</b></li>
+                <li class="legend-item"><span><span class="dot bg-purple"></span>Alimentation</span> <b id="val-alimentation">0 Ar</b></li>
             </ul>
         </div>
 
@@ -73,16 +74,19 @@
             <h3 class="section-title" style="margin-top:20px">Mes objectifs</h3>
             <div class="progress-container">
                 <div class="progress-info">
-                    <span>Vacances été</span> <span>62%</span>
+                    <span id="goal-name">Vacances été</span> 
+                    <span id="goal-percentage">0%</span>
                 </div>
-                <div class="progress-bar"><div class="progress-fill" style="width:62%"></div></div>
+                <div class="progress-bar">
+                    <div id="goal-fill" class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="stat-sub" id="goal-amount-status">0 Ar / 0 Ar</div>
             </div>
         </div>  
     </div>
 </main>
 
 <button class="btn-add">+</button>
-
 <script src="./Js/main.js"></script>
 </body>
 </html>

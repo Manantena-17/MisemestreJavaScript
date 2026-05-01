@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Manager - Budget</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <div class="logo-icon">Ar</div>
+                <h1>Finance Manager</h1>
+            </div>
+            <nav class="menu">
+                <a href="../../index.html">Tableau de bord</a>
+                <a href="budget.html" class="active">Budget</a>
+                <a href="#">À venir</a>
+                <a href="#">Objectifs</a>
+                <a href="#">Historique</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="header-titles">
+                    <h2>Budget mensuel</h2>
+                    <p id="header-subtitle">Chargement...</p>
+                </div>
+                <div class="header-controls">
+                    <div class="month-selector">
+                        <button id="btn-prev">◀</button>
+                        <span id="current-date">Avril</span>
+                        <button id="btn-next">▶</button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <section class="card card-form">
+                    <h3>Nouvelle transaction</h3>
+                    <div class="form-group">
+                        <div class="type-switcher">
+                            <button id="type-expense" class="active">Dépense</button>
+                            <button id="type-income">Revenu</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>LIBELLÉ</label>
+                        <input type="text" id="input-libelle" placeholder="Ex: Loyer, Salaire...">
+                    </div>
+
+                    <div class="form-group">
+                        <label>MONTANT</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="input-montant" placeholder="0">
+                            <span>Ar</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>CATÉGORIE</label>
+                        <select id="input-categorie">
+                            <option value="Logement">Logement</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Alimentation">Alimentation</option>
+                            <option value="Loisirs">Loisirs</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>DATE</label>
+                        <input type="date" id="input-date">
+                    </div>
+
+                    <button id="btn-submit" class="btn-submit">Ajouter la transaction</button>
+                </section>
+
+                <section class="card card-list">
+                    <h3>Transactions du mois</h3>
+                    <table class="transaction-table">
+                        <thead>
+                            <tr>
+                                <th>DATE</th>
+                                <th>LIBELLÉ</th>
+                                <th>CATÉGORIE</th>
+                                <th class="text-right">MONTANT</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactions-list">
+                            </tbody>
+                    </table>
+                    <div class="table-footer">
+                        <span id="transaction-count">0 entrées</span>
+                        <div class="total-line">
+                            <span class="label">Solde net</span>
+                            <span id="solde-net" class="value">+0 Ar</span>
+                        </div>
+                    </div>  
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="../main.js"></script>
+</body>
+</html>
