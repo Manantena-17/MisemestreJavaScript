@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dépenses à venir - Finance Manager</title>
+    <link rel="stylesheet" href="avenir.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="logo">Ar Finance Manager</div>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Tableau de bord</a></li>
+                <li><a href="../budget/budget.html">Budget</a></li>
+                <li class="active"><a href="./avenir.html">À venir</a></li>
+                <li><a href="#">Objectifs</a></li>
+                <li><a href="#">Historique</a></li>
+                <li><a href="#">Paramètres</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="header">
+                <div>
+                    <h1>Dépenses à venir</h1>
+                    <p class="subtitle">Vos charges récurrentes et engagements financiers planifiés</p>
+                </div>
+                <button class="btn-primary" id="btn-add-charge">+ Nouvelle charge</button>
+            </header>
+
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <h3>À PAYER CE MOIS</h3>
+                    <span id="total-to-pay" class="value">+0 Ar</span>
+                    <p class="details" id="count-to-pay">5 prélèvements</p>
+                    
+                </div>
+                <div class="stat-card">
+                    <h3>PROCHAIN PAIEMENT</h3>
+                    <p class="amount" id="next-payment-name">Loyer</p>
+                    <p class="details" id="next-payment-date">02 mai · dans 3 jours</p>
+                </div>
+                <div class="stat-card">
+                    <h3>SOLDE PROJETÉ FIN MAI</h3>
+                    <p class="amount success" id="projected-balance">+600 000 Ar</p>
+                    <p class="details">après toutes les charges</p>
+                </div>
+            </section>
+
+            <section class="timeline-container">
+                <div class="timeline-header">
+                    <h2>Calendrier des prélèvements (30 prochains jours)</h2>
+                    <div class="filter-buttons">
+                        <button class="active">Tous</button>
+                        <button>Mensuel</button>
+                        <button>Annuel</button>
+                    </div>
+                </div>
+
+                <div class="timeline-list" id="upcoming-list">
+                    <div class="timeline-item border-red">
+                        <div class="date">02 MAI</div>
+                        <div class="dot bg-red"></div>
+                        <div class="item-info">
+                            <h4>Loyer appartement</h4>
+                            <p>Logement • Loyer • Mensuel • Prélèvement automatique</p>
+                        </div>
+                        <div class="item-amount danger">-600 000 Ar</div>
+                    </div>
+
+                    <div class="timeline-item border-yellow">
+                        <div class="date">05 MAI</div>
+                        <div class="dot bg-yellow"></div>
+                        <div class="item-info">
+                            <h4>Netflix</h4>
+                            <p>Loisirs • Streaming • Mensuel • Carte bancaire</p>
+                        </div>
+                        <div class="item-amount danger">-32 000 Ar</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+<script src="vnir.js"></script>
+</html>
