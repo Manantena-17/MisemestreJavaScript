@@ -1,6 +1,6 @@
 
 const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "October", "Novembre", "Décembre"];
-let currentMonthIndex = 3; 
+let currentMonthIndex = 4; 
 let currentYear = 2026;
 let transactions = JSON.parse(localStorage.getItem("ar_finance_data")) || [];
 //  NAVIGATION DES MOIS (Dashboard) 
@@ -58,7 +58,7 @@ function refreshDashboardUI() {
     document.getElementById("expense-value").textContent = `${totalExpense.toLocaleString()} Ar`;
     document.getElementById("expense-value").textContent = `${totalExpense.toLocaleString()} Ar`;
     document.getElementById("income-count").textContent = `${incomeTx.length} entrée${incomeTx.length > 1 ? 's' : ''} ce mois`;
-    document.getElementById("expense-count").textContent = `${expenseTx.length} transaction${expenseTx.length > 1 ? 's' : ''}`;
+    document.getElementById("expense-count").textContent = `${expenseTx.length+incomeTx.length} transaction`;
     
     //  Mise à jour du graphique Donut
     const donut = document.getElementById("donut-gradient");

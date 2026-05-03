@@ -1,6 +1,6 @@
 
 const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
-let currentMonthIndex = 3; 
+let currentMonthIndex = 4; 
 let currentYear = 2026;
 let transactions = JSON.parse(localStorage.getItem("ar_finance_data")) || [];
 function saveTransactions() {
@@ -94,7 +94,7 @@ const totalIncome = incomeTx.reduce((sum, t) => sum + t.amount, 0);
 const totalExpense = expenseTx.reduce((sum, t) => sum + t.amount, 0);
 const netBalance = totalIncome - totalExpense;
 
-document.getElementById("transaction-count").textContent = `${expenseTx.length} Transactions`;
+document.getElementById("transaction-count").textContent = `${expenseTx.length+incomeTx.length} Transactions`;
 document.getElementById("solde-net").textContent = `${netBalance.toLocaleString()} AR`;
     if (tableBody) {
         tableBody.innerHTML = "";

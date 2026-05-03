@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dépenses à venir - Finance Manager</title>
+    <title>Dépenses à venir - Ar Finance Manager</title>
     <link rel="stylesheet" href="avenir.css">
 </head>
 <body>
+
     <div class="app-container">
         <nav class="sidebar">
             <div class="logo">Ar Finance Manager</div>
@@ -23,7 +24,7 @@
         <main class="main-content">
             <header class="header">
                 <div>
-                    <h1>Dépenses à venir</h1>
+                    <h1 id="current-date">Chargement...</h1>
                     <p class="subtitle">Vos charges récurrentes et engagements financiers planifiés</p>
                 </div>
                 <button class="btn-primary" id="btn-add-charge">+ Nouvelle charge</button>
@@ -32,56 +33,56 @@
             <section class="stats-grid">
                 <div class="stat-card">
                     <h3>À PAYER CE MOIS</h3>
-                    <span id="total-to-pay" class="value">+0 Ar</span>
-                    <p class="details" id="count-to-pay">5 prélèvements</p>
-                    
+                    <span id="total-to-pay" class="value">0 Ar</span>
+                    <p class="details" id="count-to-pay">Prélèvements prévus</p>
                 </div>
                 <div class="stat-card">
                     <h3>PROCHAIN PAIEMENT</h3>
-                    <p class="amount" id="next-payment-name">Loyer</p>
-                    <p class="details" id="next-payment-date">02 mai · dans 3 jours</p>
+                    <p class="amount" id="next-payment-name">Aucun</p>
+                    <p class="details" id="next-payment-date">-</p>
                 </div>
                 <div class="stat-card">
-                    <h3>SOLDE PROJETÉ FIN MAI</h3>
-                    <p class="amount success" id="projected-balance">+600 000 Ar</p>
-                    <p class="details">après toutes les charges</p>
+                    <h3>SOLDE PROJETÉ</h3>
+                    <p class="amount success" id="projected-balance">0 Ar</p>
+                    <p class="details">Après déduction des charges</p>
                 </div>
             </section>
 
             <section class="timeline-container">
                 <div class="timeline-header">
-                    <h2>Calendrier des prélèvements (30 prochains jours)</h2>
-                    <div class="filter-buttons">
-                        <button class="active">Tous</button>
-                        <button>Mensuel</button>
-                        <button>Annuel</button>
-                    </div>
+                    <h2>Calendrier des prélèvements</h2>
                 </div>
-
-                <div class="timeline-list" id="upcoming-list">
-                    <div class="timeline-item border-red">
-                        <div class="date">02 MAI</div>
-                        <div class="dot bg-red"></div>
-                        <div class="item-info">
-                            <h4>Loyer appartement</h4>
-                            <p>Logement • Loyer • Mensuel • Prélèvement automatique</p>
-                        </div>
-                        <div class="item-amount danger">-600 000 Ar</div>
-                    </div>
-
-                    <div class="timeline-item border-yellow">
-                        <div class="date">05 MAI</div>
-                        <div class="dot bg-yellow"></div>
-                        <div class="item-info">
-                            <h4>Netflix</h4>
-                            <p>Loisirs • Streaming • Mensuel • Carte bancaire</p>
-                        </div>
-                        <div class="item-amount danger">-32 000 Ar</div>
-                    </div>
-                </div>
+                <div class="timeline-list" id="upcoming-list"></div>
             </section>
         </main>
     </div>
+
+    <div id="modal-container" class="modal-overlay">
+        <div class="modal-card">
+            <h2>Nouvelle Charge</h2>
+            
+            <div class="input-group">
+                <label>Titre de l'avenir</label>
+                <input type="text" id="in-title" placeholder="Ex: Loyer, Canal+">
+            </div>
+
+            <div class="input-group">
+                <label>Montant (Ar)</label>
+                <input type="number" id="in-amount" placeholder="0">
+            </div>
+
+            <div class="input-group">
+                <label>Catégorie</label>
+                <input type="text" id="in-category" placeholder="Ex: Maison, Loisirs">
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn-secondary" id="btn-modal-close">Annuler</button>
+                <button class="btn-primary" id="btn-modal-save" style="flex:2">Enregistrer</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="avnir.js"></script>
 </body>
-<script src="vnir.js"></script>
 </html>
