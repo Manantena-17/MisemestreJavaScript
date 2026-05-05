@@ -23,7 +23,7 @@ function saveTransactions() {
     localStorage.setItem("ar_finance_data", JSON.stringify(transactions));
 }
 
-// Enregistrer
+// add
 if (btnSave) {
     btnSave.addEventListener("click", function() {
         const title = document.getElementById('in-title').value;
@@ -51,7 +51,7 @@ if (btnSave) {
         }
     });
 }
-
+// display
 function refresh() {
     const dateDisplay = document.getElementById("current-date");
     if (dateDisplay) dateDisplay.textContent = months[currentMonthIndex];
