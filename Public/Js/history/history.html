@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Manager - Historique</title>
+    <link rel="stylesheet" href="history.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">Ar</div>
+            Finance Manager
+        </div>
+        <ul class="nav-menu">
+            <a href="../../index.html">
+                    <li class="nav-item" id="nav-dashboard"><span class="nav-icon">📊</span> Tableau de bord</li>
+            </a>
+           <a href="../budget/budget.html">
+                    <li class="nav-item" id="nav-budget"><span class="nav-icon">💰</span> Budget</li>
+           </a>
+            <a href="../avenir/avenir.html">
+                    <li class="nav-item" id="nav-upcoming"><span class="nav-icon">📅</span> À venir</li>
+            </a>
+            <a href="../goals/goal.html">
+                    <li class="nav-item" id="nav-goals"><span class="nav-icon">🎯</span> Objectifs</li>
+            </a>
+            
+            <li class="nav-item active" id="nav-history"><span class="nav-icon">📜</span> Historique</li>
+            <a href=""">
+                    <li class="nav-item" id="nav-settings"><span class="nav-icon">⚙️</span> Paramètres</li>
+            </a>
+            
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <header class="header-row">
+            <div class="title-section">
+                <h1>Historique des transactions</h1>
+                <p>Filtrez et analysez toutes vos opérations passées</p>
+            </div>
+            <button id="btn-export-csv" class="btn-export">Exporter CSV</button>
+        </header>
+
+        <section class="content-card">
+            <div class="filters-section">
+                <span class="filters-label">Filtres</span>
+                <div class="filter-controls">
+                    <div class="period-toggle" id="period-selector">
+                        <button class="toggle-btn active" data-period="month">Mois</button>
+                        <button class="toggle-btn" data-period="3months">3 mois</button>
+                        <button class="toggle-btn" data-period="year">Année</button>
+                    </div>
+                    
+                    <div class="date-inputs">
+                        <input type="date" id="date-start" value="2026-04-01">
+                        <span>→</span>
+                        <input type="date" id="date-end" value="2026-04-30">
+                    </div>
+
+                    <select id="filter-category" class="category-select">
+                        <option value="all">Toutes catégories</option>
+                        <option value="sante">Santé</option>
+                        <option value="alimentation">Alimentation</option>
+                        <option value="revenu">Revenus</option>
+                        <option value="transport">Transport</option>
+                    </li>
+                    </select>
+
+                    <button id="btn-reset-filters" class="btn-reset">Réinit.</button>
+                </div>
+            </div>
+
+            <div class="stats-row">
+                <div class="stat-item">
+                    <div class="stat-label">Revenus</div>
+                    <div id="stat-total-income" class="stat-value val-income">0 Ar</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Dépenses</div>
+                    <div id="stat-total-expense" class="stat-value val-expense">0 Ar</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Solde Net</div>
+                    <div id="stat-net-balance" class="stat-value">0 Ar</div>
+                </div>
+            </div>
+
+           <table id="transactions-table">
+    <thead>
+        <tr>
+            <th>Date ▼</th>
+            <th>Libellé</th>
+            <th>Catégorie</th>
+            <th style="text-align:right">Montant</th>
+        </tr>
+    </thead>
+    <tbody id="transactions-body"></tbody>
+</table>
+
+            <div class="pagination">
+                <span id="pagination-info" class="page-info">Chargement...</span>
+                <div class="page-btns">
+                    <button id="btn-prev" class="btn-page">Précédent</button>
+                    <button id="btn-next" class="btn-page btn-next">Suivant</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="history.js"></script>
+</body>
+</html>
