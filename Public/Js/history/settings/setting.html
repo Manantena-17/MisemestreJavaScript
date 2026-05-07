@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ar Finance Manager - Paramètres</title>
+    <link rel="stylesheet" href="setting.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-circle">Ar</div>
+                <span class="brand-name">Finance Manager</span>
+            </div>
+            <nav class="menu">
+                <a href="../../../index.html" class="menu-item">Tableau de bord</a>
+                <a href="../../budget/budget.html" class="menu-item">Budget</a>
+                <a href="../../avenir/avenir.html" class="menu-item">À venir</a>
+                <a href="../../goals/goal.html" class="menu-item">Objectifs</a>
+                <a href="../../history/history.html" class="menu-item">Historique</a>
+                <a href="#" class="menu-item active">Paramètres</a>
+            </nav>
+            <div class="user-avatar">JD</div>
+        </aside>
+
+        <main class="main-content">
+            <header class="page-header">
+                <h1>Paramètres</h1>
+                <p>Personnalisez vos catégories et préférences</p>
+            </header>
+
+            <nav class="tabs">
+                <a href="#" class="tab-item active">Catégories</a>
+                <a href="#" class="tab-item">Préférences</a>
+                <a href="#" class="tab-item">Données</a>
+            </nav>
+
+            <div class="settings-grid">
+                <section class="card category-list-card">
+                    <div class="card-header">
+                        <h2>Catégories</h2>
+                        <button class="btn-new">+ Nouvelle</button>
+                    </div>
+                    <div class="category-items">
+                        <div class="category-row active">
+                            <span class="dot blue"></span>
+                            <span class="cat-name">Logement</span>
+                            <span class="sub-count">3 sous-cat.</span>
+                            <span class="chevron">▶</span>
+                        </div>
+                        <div class="category-row">
+                            <span class="dot green"></span>
+                            <span class="cat-name">Transport</span>
+                            <span class="sub-count">4 sous-cat.</span>
+                            <span class="chevron">▶</span>
+                        </div>
+                        <div class="category-row">
+                            <span class="dot purple"></span>
+                            <span class="cat-name">Alimentation</span>
+                            <span class="sub-count">2 sous-cat.</span>
+                            <span class="chevron">▶</span>
+                        </div>
+                        <div class="category-row">
+                            <span class="dot orange"></span>
+                            <span class="cat-name">Loisirs</span>
+                            <span class="sub-count">3 sous-cat.</span>
+                            <span class="chevron">▶</span>
+                        </div>
+                        <div class="category-row">
+                            <span class="dot gray"></span>
+                            <span class="cat-name">Santé</span>
+                            <span class="sub-count">2 sous-cat.</span>
+                            <span class="chevron">▶</span>
+                        </div>
+                        <div class="category-row">
+                            <span class="dot red"></span>
+                            <span class="cat-name">Dette</span>
+                            <span class="sub-count">1 sous-cat.</span>
+                            <span class="chevron">▶</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card category-edit-card">
+                    <h2>Modifier la catégorie</h2>
+                    
+                    <div class="form-group">
+                        <label>NOM</label>
+                        <input type="text" value="Logement" class="input-light">
+                    </div>
+
+                    <div class="form-group">
+                        <label>COULEUR</label>
+                        <div class="color-picker">
+                            <div class="color-swatch blue active"></div>
+                            <div class="color-swatch green"></div>
+                            <div class="color-swatch purple"></div>
+                            <div class="color-swatch orange"></div>
+                            <div class="color-swatch red"></div>
+                            <div class="color-swatch dark-gray"></div>
+                            <div class="color-swatch light-blue"></div>
+                            <div class="color-swatch cyan"></div>
+                        </div>
+                    </div>
+
+                    <div class="sub-category-section">
+                        <div class="sub-header">
+                            <h3>Sous-catégories</h3>
+                            <button class="btn-outline-blue">+ Sous-catégorie</button>
+                        </div>
+                        <p class="sub-hint">Les sous-catégories permettent un suivi plus précis</p>
+                        
+                        <div class="sub-cat-list">
+                            <div class="sub-cat-item">
+                                <span class="dot-small blue"></span>
+                                <span class="sub-name">Loyer</span>
+                                <div class="sub-actions">
+                                    <button class="btn-text">Modifier</button>
+                                    <button class="btn-delete-small">×</button>
+                                </div>
+                            </div>
+                            <div class="sub-cat-item">
+                                <span class="dot-small blue"></span>
+                                <span class="sub-name">Charges (eau, électricité, gaz)</span>
+                                <div class="sub-actions">
+                                    <button class="btn-text">Modifier</button>
+                                    <button class="btn-delete-small">×</button>
+                                </div>
+                            </div>
+                            <div class="sub-cat-item">
+                                <span class="dot-small blue"></span>
+                                <span class="sub-name">Internet</span>
+                                <div class="sub-actions">
+                                    <button class="btn-text">Modifier</button>
+                                    <button class="btn-delete-small">×</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <button class="btn-danger-outline">Supprimer</button>
+                        <button class="btn-save">Enregistrer</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+</body>
+<script src="setting.js"></script>
+</html>

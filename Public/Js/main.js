@@ -113,8 +113,62 @@ function refreshDashboardUI() {
         if (goalStatus) goalStatus.textContent = "Aucun objectif défini";
     }
 
-// donut mise a jour 
+    
+// categorie
+    const savedCategories = JSON.parse(localStorage.getItem('financeCategories')) || [];
+    
+    
+   const  categoryStat = {};
+    savedCategories.forEach(cat => {
+        categoryStat[cat.name] = 0;
+    });
+
+    expenseTx.forEach(t => {
+        if (categoryStat.hasOwnProperty(t.category)) {
+            categoryStat[t.category] += t.amount;
+        }
+    });
+
     const donut = document.getElementById("donut-gradient");
+    const legendList = document.querySelector(".legend-list");
+
+    if (legendList && savedCategories.length > 0) {
+        legendList.innerHTML = ""; 
+        let gradientParts = [];
+        let currentPercent = 0;
+
+        savedCategories.forEach(cat => {
+            const amount = categoryStat[cat.name] || 0;
+            const percent = totalExpense > 0 ? (amount / totalExpense) * 100 : 0;
+
+            const li = document.createElement("li");
+            li.className = "legend-item";
+            li.innerHTML = `
+                <span><span class="dot bg-${cat.color}"></span>${cat.name}</span> 
+                <b>${amount.toLocaleString()} Ar</b>
+            `;
+            legendList.appendChild(li);
+
+            if (totalExpense > 0 && percent > 0) {
+
+                const colorValue = `var(--${cat.color})`; 
+                gradientParts.push(`${colorValue} ${currentPercent}% ${currentPercent + percent}%`);
+                currentPercent += percent;
+            }
+        });
+
+        if (donut) {
+            document.getElementById("total-donut").textContent = `${totalExpense.toLocaleString()} Ar`;
+            donut.style.background = (totalExpense > 0 && gradientParts.length > 0)
+                ? `conic-gradient(${gradientParts.join(", ")})`
+                : "#edf2f7";
+        }
+    } else if (donut) {
+        donut.style.background = `#edf2f7`;
+    }
+
+// donut mise a jour 
+    // donut = document.getElementById("donut-gradient");
     if (donut && totalExpense > 0) {
         document.getElementById("total-donut").textContent = `${totalExpense.toLocaleString()} Ar`;
         document.getElementById("val-logement").textContent = `${categoryStats["Logement"].toLocaleString()} Ar`;
